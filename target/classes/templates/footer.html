@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title th:text="${title}">MindMonitor</title>
+</head>
+<body class="bg-gray-100 text-gray-900">
+<header th:replace="fragments/header :: header"></header>
+<main class="p-6 max-w-5xl mx-auto">
+    <div th:insert="${content}"></div>
+</main>
+<footer th:replace="fragments/footer :: footer"></footer>
+</body>
+</html>

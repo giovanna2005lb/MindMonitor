@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<div>
+    <h1 class="text-3xl font-bold mb-6">Dashboard do Gestor</h1>
+
+
+    <a th:href="@{/employees}" class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700">Ver Funcionários</a>
+
+
+    <h2 class="text-xl font-semibold mt-6 mb-3">Riscos Recentes</h2>
+    <ul class="space-y-3">
+        <li th:each="s : ${summaries}" class="bg-white p-4 rounded-xl shadow">
+            <span class="font-semibold" th:text="${s.employee.username}"></span> —
+            <span th:text="${s.burnoutRisk ? 'Risco de burnout' : 'Estável'}"></span>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

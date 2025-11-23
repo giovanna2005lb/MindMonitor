@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<div>
+    <h1 class="text-3xl font-bold mb-6">Dashboard do Funcionário</h1>
+
+
+    <div class="flex gap-4 mb-6">
+        <a th:href="@{/dailyreport/new}" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">Novo Relatório Diário</a>
+        <a th:href="@{/weeklysummary/view}" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Resumo Semanal</a>
+    </div>
+
+
+    <h2 class="text-xl font-semibold mb-3">Relatórios Recentes</h2>
+
+
+    <ul class="space-y-3">
+        <li th:each="r : ${reports}" class="bg-white p-4 rounded-xl shadow">
+            <span th:text="${r.date}" class="font-semibold"></span> —
+            <span class="text-gray-700">Estresse:</span>
+            <strong th:text="${r.stress}"></strong>/10
+        </li>
+    </ul>
+</div>
+</body>
+</html>

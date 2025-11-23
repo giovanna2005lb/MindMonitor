@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<div>
+    <h1 class="text-2xl font-bold mb-4">Funcionários</h1>
+
+
+    <ul class="space-y-3">
+        <li th:each="e : ${employees}" class="bg-white p-4 rounded-xl shadow flex justify-between items-center">
+            <span class="font-semibold" th:text="${e.username}"></span>
+            <a th:href="@{'/employees/' + ${e.id} + '/reports'}" class="px-3 py-1 bg-blue-600 text-white rounded-lg hover:bg-blue-700">Ver relatórios</a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

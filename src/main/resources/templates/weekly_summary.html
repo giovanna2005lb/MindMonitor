@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<body>
+<div class="bg-white p-8 rounded-xl shadow max-w-xl mx-auto">
+    <h1 class="text-2xl font-bold mb-4">Resumo Semanal</h1>
+
+
+    <p><strong>Média de Desmotivação:</strong> <span th:text="${summary.avgDesmotivation}"></span></p>
+    <p><strong>Média de Sobrecarga:</strong> <span th:text="${summary.avgOverload}"></span></p>
+    <p><strong>Média de Estresse:</strong> <span th:text="${summary.avgStress}"></span></p>
+    <p><strong>Risco de Burnout:</strong> <span th:text="${summary.burnoutRisk}"></span></p>
+
+
+    <h3 class="text-xl font-semibold mt-4">Feedback da IA</h3>
+    <p th:text="${summary.aiFeedback}" class="bg-gray-100 p-4 rounded-lg"></p>
+</div>
+</body>
+</html>

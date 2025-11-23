@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout :: layout(~{::body})}">
+
+<body>
+<div class="max-w-lg mx-auto bg-white p-8 shadow rounded-xl">
+    <h1 class="text-2xl font-bold mb-4">Novo Relatório Diário</h1>
+
+
+    <form th:action="@{/dailyreport}" th:object="${report}" method="post" class="space-y-4">
+
+
+        <div>
+            <label class="font-semibold">Desmotivação (1-10)</label>
+            <input type="number" min="1" max="10" th:field="*{desmotivation}" class="w-full p-2 border rounded-lg" />
+        </div>
+        <div>
+            <label class="font-semibold">Sobrecarga (1-10)</label>
+            <input type="number" min="1" max="10" th:field="*{overload}" class="w-full p-2 border rounded-lg" />
+        </div>
+        <div>
+            <label class="font-semibold">Estresse (1-10)</label>
+            <input type="number" min="1" max="10" th:field="*{stress}" class="w-full p-2 border rounded-lg" />
+        </div>
+        <div>
+            <label class="font-semibold">Comentário</label>
+            <textarea th:field="*{comment}" maxlength="255" class="w-full p-2 border rounded-lg"></textarea>
+        </div>
+
+
+        <button type="submit" class="w-full py-2 bg-green-600 text-white rounded-lg hover:bg-green-700">Salvar</button>
+    </form>
+</div>
+</body>
+</html>
